@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!--  main-fragment (title, otherStaticResources, header, nav, mainContent, footer)  -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Adresse - Recherche Meteo</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+
+<body>
+
+<!-- <div id="home-header"> -->
+<header>
+    <h1>Adresse - Recherche Meteo</h1>
+</header>
+<!-- </div> -->
+
+<nav>
+    <div id="home-nav" th:replace="~{/fragments/app-fragments :: nav-default}">
+        Recherche Meteo Nav
+    </div>
+</nav>
+
+<div class="body">
+    <form action="#" th:action="@{/meteo}" method="post"> <!-- th:object="${meteo}" -->
+        <label>Please enter your address : <input type="text" id="adresse" name="adresse" /></label>
+        <p><input type="submit" value="Get the weather at the given address" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<!--  main-fragment (title, otherStaticResources, header, nav, mainContent, footer)  -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Meteo</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+
+<body>
+
+<!-- <div id="home-header"> -->
+<header>
+    <h1>Meteo</h1>
+</header>
+<!-- </div> -->
+
+<nav>
+    <div id="home-nav" th:replace="~{/fragments/app-fragments :: nav-default}">
+        Meteo Nav
+    </div>
+</nav>
+
+<div class="body">
+    <p th:text="'Vous avez recherché : ' + ${nomTemplate}" />
+    <p th:text="'Longitude : ' + ${lon}" />
+    <p th:text="'Latitude : ' + ${lat}" />
+    <p th:text="'Label : ' + ${label}" />
+    <p th:text="'Il fait actuellement ' + ${temp2} + '°C'" />
+
+</div>
+
+
+</body>
+</html>

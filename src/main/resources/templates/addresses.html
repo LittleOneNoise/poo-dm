@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<!--  main-fragment (title, otherStaticResources, header, nav, mainContent, footer)  -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Adresses</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}" />
+</head>
+
+<body>
+
+<!-- <div id="home-header"> -->
+<header>
+    <h1>Adresses</h1>
+</header>
+<!-- </div> -->
+
+<nav>
+    <div id="home-nav" th:replace="~{/fragments/app-fragments :: nav-default}">
+        Adress Nav
+    </div>
+</nav>
+
+<div class="body">
+    <h2>Les differentes adresses</h2>
+    <ul th:each="address: ${allAddresses}">
+        <li th:text="${address.content}" />
+        <li th:text="${address.auteur}" />
+    </ul>
+</div>
+
+
+</body>
+</html>
